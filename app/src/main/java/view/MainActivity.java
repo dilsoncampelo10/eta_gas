@@ -1,12 +1,17 @@
-package devandroid.dilson.appetagas;
+package view;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import devandroid.dilson.appetagas.R;
+import model.Ethanol;
+import model.Gasoline;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,5 +25,7 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
     }
 }
