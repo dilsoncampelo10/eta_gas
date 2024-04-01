@@ -1,7 +1,6 @@
-package view;
+package devandroid.dilson.appetagas.view;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,8 +9,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.dilson.appetagas.R;
-import model.Ethanol;
-import model.Gasoline;
 
 public class MainActivity extends AppCompatActivity {
 

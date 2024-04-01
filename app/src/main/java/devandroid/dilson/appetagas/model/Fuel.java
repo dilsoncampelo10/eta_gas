@@ -1,4 +1,4 @@
-package model;
+package devandroid.dilson.appetagas.model;
 
 public abstract class Fuel {
     protected String name;
