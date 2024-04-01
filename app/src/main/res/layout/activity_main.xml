@@ -9,7 +9,6 @@
     tools:context=".view.MainActivity">
 
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -20,14 +19,14 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="16dp"
-        android:contentDescription="@string/txt_photo"
-        tools:src="@mipmap/ic_launcher_round" />
-
+        android:src="@mipmap/ic_launcher" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,7 +40,8 @@
             android:layout_marginTop="16dp"
             android:autofillHints=""
             android:ems="10"
-            android:hint="@string/hint_eta" />
+            android:hint="@string/hint_eta"
+            android:inputType="numberDecimal"/>
 
         <EditText
             android:id="@+id/editGasoline"
@@ -52,7 +52,7 @@
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/hint_gas"
-            android:inputType="text"
+            android:inputType="numberDecimal"
             />
 
 
