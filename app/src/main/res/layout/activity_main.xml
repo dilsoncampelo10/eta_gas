@@ -35,7 +35,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/editEthanol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -44,7 +44,7 @@
             android:hint="@string/hint_eta" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/editGasoline"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -59,7 +59,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnCalculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -67,7 +67,7 @@
         android:text="@string/txt_button_calc" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/txtResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -77,21 +77,21 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnClear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Limpar"
         android:layout_marginTop="16dp"/>
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Salvar"
         android:layout_marginTop="16dp"/>
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnFinish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Finalizar"
