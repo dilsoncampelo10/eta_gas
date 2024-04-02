@@ -15,6 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import devandroid.dilson.appetagas.R;
+import devandroid.dilson.appetagas.controller.FuelController;
 import devandroid.dilson.appetagas.model.Ethanol;
 import devandroid.dilson.appetagas.model.Gasoline;
 import devandroid.dilson.appetagas.util.CalculateFuel;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private String msg;
     private Gasoline gasoline;
     private Ethanol ethanol;
+    private FuelController fuelController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         this.btnFinish = findViewById(R.id.btnFinish);
         this.btnSave = findViewById(R.id.btnSave);
         this.txtResult = findViewById(R.id.txtResult);
-
+        this.fuelController = new FuelController(MainActivity.this);
 
         this.btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,14 +67,21 @@ public class MainActivity extends AppCompatActivity {
                 btnSave.setEnabled(false);
                 editGasoline.setText("");
                 editEthanol.setText("");
+                fuelController.clear();
             }
         });
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 gasoline = new Gasoline(Double.parseDouble(editGasoline.getText().toString()));
+                gasoline.setMsg(msg);
                 ethanol = new Ethanol(Double.parseDouble(editEthanol.getText().toString()));
+                ethanol.setMsg(msg);
+                fuelController.save(gasoline);
+                fuelController.save(ethanol);
+
             }
         });
 
@@ -95,6 +104,9 @@ public class MainActivity extends AppCompatActivity {
                     gasoline = new Gasoline(Double.parseDouble(editGasoline.getText().toString()));
                     ethanol = new Ethanol(Double.parseDouble(editEthanol.getText().toString()));
                     msg = CalculateFuel.getResult(gasoline, ethanol);
+                    gasoline.setMsg(msg);
+                    ethanol.setMsg(msg);
+
                     txtResult.setText(msg);
                     btnSave.setEnabled(true);
 
