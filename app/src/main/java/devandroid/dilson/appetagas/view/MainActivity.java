@@ -62,8 +62,17 @@ public class MainActivity extends AppCompatActivity {
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btnSave.setEnabled(false);
                 editGasoline.setText("");
                 editEthanol.setText("");
+            }
+        });
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gasoline = new Gasoline(Double.parseDouble(editGasoline.getText().toString()));
+                ethanol = new Ethanol(Double.parseDouble(editEthanol.getText().toString()));
             }
         });
 
@@ -87,8 +96,10 @@ public class MainActivity extends AppCompatActivity {
                     ethanol = new Ethanol(Double.parseDouble(editEthanol.getText().toString()));
                     msg = CalculateFuel.getResult(gasoline, ethanol);
                     txtResult.setText(msg);
+                    btnSave.setEnabled(true);
 
                 } else {
+                    btnSave.setEnabled(false);
                     Toast.makeText(MainActivity.this, "Digite os dados corretamente", Toast.LENGTH_LONG).show();
                 }
             }
