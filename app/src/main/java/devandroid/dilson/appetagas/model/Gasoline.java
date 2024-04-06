@@ -5,13 +5,5 @@ public class Gasoline extends Fuel{
         super("Gasolina",price);
     }
 
-    @Override
-    public String getName() {
-        return this.name;
-    }
 
-    @Override
-    public Double getPrice() {
-        return this.price;
-    }
 }

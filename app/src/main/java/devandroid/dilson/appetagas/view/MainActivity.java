@@ -14,9 +14,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.List;
+
 import devandroid.dilson.appetagas.R;
 import devandroid.dilson.appetagas.controller.FuelController;
 import devandroid.dilson.appetagas.model.Ethanol;
+import devandroid.dilson.appetagas.model.Fuel;
 import devandroid.dilson.appetagas.model.Gasoline;
 import devandroid.dilson.appetagas.util.CalculateFuel;
 
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Gasoline gasoline;
     private Ethanol ethanol;
     private FuelController fuelController;
+    List<Fuel> listFuel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
         this.editEthanol = findViewById(R.id.editEthanol);
         this.editGasoline = findViewById(R.id.editGasoline);
         this.btnCalculate = findViewById(R.id.btnCalculate);
@@ -52,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         this.btnSave = findViewById(R.id.btnSave);
         this.txtResult = findViewById(R.id.txtResult);
         this.fuelController = new FuelController(MainActivity.this);
+
+        this.listFuel = fuelController.getDB();
+        Fuel f3 = listFuel.get(1);
 
         this.btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
                 ethanol.setMsg(msg);
                 fuelController.save(gasoline);
                 fuelController.save(ethanol);
+
+                Toast.makeText(MainActivity.this,"Salvo com sucesso",Toast.LENGTH_LONG).show();
 
             }
         });

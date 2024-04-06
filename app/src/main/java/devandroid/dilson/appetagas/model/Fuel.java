@@ -1,16 +1,15 @@
 package devandroid.dilson.appetagas.model;
 
-public abstract class Fuel {
-    protected String name;
+public class Fuel {
+    protected Integer id;
     protected Double price;
     protected String msg;
 
-    public String getMsg() {
-        return this.msg;
-    }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    protected String name;
+
+    public Fuel(){
+
     }
 
     public Fuel(String name, Double price){
@@ -18,9 +17,26 @@ public abstract class Fuel {
         this.price = price;
     }
 
-    public abstract String getName();
+    public Fuel(Integer id, String name, Double price){
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
 
-    public abstract  Double getPrice();
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public String getName() {
+        return this.name;
+    }
+
+    public Double getPrice() {
+        return this.price;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -28,5 +44,13 @@ public abstract class Fuel {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getMsg() {
+        return this.msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }

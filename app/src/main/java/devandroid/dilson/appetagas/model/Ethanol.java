@@ -6,13 +6,5 @@ public class Ethanol extends  Fuel{
     }
 
 
-    @Override
-    public String getName() {
-        return this.name;
-    }
 
-    @Override
-    public Double getPrice() {
-        return this.price;
-    }
 }
