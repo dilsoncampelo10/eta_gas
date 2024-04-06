@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         this.fuelController = new FuelController(MainActivity.this);
 
         this.listFuel = fuelController.getDB();
-        Fuel f3 = listFuel.get(1);
 
         this.btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override

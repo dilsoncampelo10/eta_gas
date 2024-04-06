@@ -37,7 +37,7 @@ public class SplashActivity extends AppCompatActivity {
 
                 try  {
                     EtaGasDB etaGasDB = new EtaGasDB(SplashActivity.this);
-
+                    etaGasDB.close();
                 } catch(Exception e) {
                     Log.i("try",e.getMessage());
                 }
