@@ -44,4 +44,14 @@ public class FuelController extends EtaGasDB {
         return getDB();
     }
 
+    public void update(Fuel fuel){
+        ContentValues content = new ContentValues();
+        content.put("id",fuel.getId());
+        content.put("name",fuel.getName());
+        content.put("price",fuel.getPrice());
+        content.put("msg",fuel.getMsg());
+
+        updateDB("fuel",content);
+    }
+
 }
