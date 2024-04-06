@@ -1,5 +1,6 @@
 package devandroid.dilson.appetagas.controller;
 
+import android.content.ContentValues;
 import android.content.SharedPreferences;
 
 import devandroid.dilson.appetagas.database.EtaGasDB;
@@ -18,10 +19,18 @@ public class FuelController extends EtaGasDB {
     }
 
     public void save(Fuel f){
+        ContentValues content = new ContentValues();
+        //SharedPreferences
         this.fuelList.putString("name",f.getName());
         this.fuelList.putString("price",f.getPrice().toString());
         this.fuelList.putString("msg",f.getMsg());
         this.fuelList.apply();
+        //DB
+        content.put("name",f.getName());
+        content.put("price",f.getPrice());
+        content.put("msg",f.getMsg());
+
+        saveDB("fuel",content);
     }
 
     public void clear(){

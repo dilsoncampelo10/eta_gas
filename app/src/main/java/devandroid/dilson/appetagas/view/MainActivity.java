@@ -83,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
                 fuelController.save(gasoline);
                 fuelController.save(ethanol);
 
+                Toast.makeText(MainActivity.this,"Salvo com sucesso",Toast.LENGTH_LONG).show();
+
             }
         });
 

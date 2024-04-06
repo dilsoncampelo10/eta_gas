@@ -1,5 +1,6 @@
 package devandroid.dilson.appetagas.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -42,5 +43,9 @@ public class EtaGasDB extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    public void saveDB(String table, ContentValues content){
+        db.insert(table,null,content);
     }
 }
