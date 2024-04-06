@@ -3,6 +3,8 @@ package devandroid.dilson.appetagas.controller;
 import android.content.ContentValues;
 import android.content.SharedPreferences;
 
+import java.util.List;
+
 import devandroid.dilson.appetagas.database.EtaGasDB;
 import devandroid.dilson.appetagas.model.Fuel;
 import devandroid.dilson.appetagas.view.MainActivity;
@@ -38,9 +40,8 @@ public class FuelController extends EtaGasDB {
         this.fuelList.apply();
     }
 
-    public void getData(Fuel f){
-        f.setName(sharedPreferences.getString("name",""));
-        f.setPrice(Double.parseDouble(sharedPreferences.getString("price","")));
+    public List<Fuel> getData(){
+        return getDB();
     }
 
 }

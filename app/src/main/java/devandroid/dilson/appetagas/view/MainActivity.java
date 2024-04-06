@@ -14,9 +14,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.List;
+
 import devandroid.dilson.appetagas.R;
 import devandroid.dilson.appetagas.controller.FuelController;
 import devandroid.dilson.appetagas.model.Ethanol;
+import devandroid.dilson.appetagas.model.Fuel;
 import devandroid.dilson.appetagas.model.Gasoline;
 import devandroid.dilson.appetagas.util.CalculateFuel;
 
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Gasoline gasoline;
     private Ethanol ethanol;
     private FuelController fuelController;
+    List<Fuel> listFuel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         this.btnSave = findViewById(R.id.btnSave);
         this.txtResult = findViewById(R.id.txtResult);
         this.fuelController = new FuelController(MainActivity.this);
+
+        this.listFuel = fuelController.getDB();
 
         this.btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
