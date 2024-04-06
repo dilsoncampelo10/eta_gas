@@ -43,6 +43,7 @@
             android:layout_marginTop="16dp"
             android:autofillHints=""
             android:ems="10"
+            android:textColorHint="@color/white"
             android:hint="@string/hint_eta"
             android:inputType="numberDecimal"/>
 
@@ -53,6 +54,7 @@
             android:layout_marginTop="16dp"
             android:layout_weight="1"
             android:autofillHints=""
+            android:textColorHint="@color/white"
             android:ems="10"
             android:hint="@string/hint_gas"
             android:inputType="numberDecimal"
@@ -78,7 +80,9 @@
         android:layout_marginTop="16dp"
         android:text="@string/button_res"
         android:textSize="34sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@color/black"/>
 
     <Button
         android:id="@+id/btnClear"
@@ -95,7 +99,8 @@
         android:layout_marginTop="16dp"
         android:enabled="false"
         android:text="Salvar"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        />
 
     <Button
         android:id="@+id/btnFinish"
