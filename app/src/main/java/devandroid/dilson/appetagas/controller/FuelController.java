@@ -54,4 +54,8 @@ public class FuelController extends EtaGasDB {
         updateDB("fuel",content);
     }
 
+    public void delete(Integer id){
+        deleteDB("fuel",id);
+    }
+
 }

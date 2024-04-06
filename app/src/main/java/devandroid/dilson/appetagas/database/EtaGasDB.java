@@ -83,4 +83,8 @@ public class EtaGasDB extends SQLiteOpenHelper {
 
         db.update(table,content,"id=?",new String[]{Integer.toString(id)});
     }
+
+    public  void deleteDB(String table, Integer id){
+        db.delete(table,"id=?",new String[]{Integer.toString(id)});
+    }
 }
