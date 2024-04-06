@@ -9,7 +9,7 @@ public class CalculateFuel {
         final Double IDEAL_PRICE = gasoline.getPrice() * 0.7;
 
         if (ethanol.getPrice() <= IDEAL_PRICE)
-           return "Abastecer com Ethanol";
+           return "Abastecer com Etanol";
 
         return "Abastecer com Gasolina";
 

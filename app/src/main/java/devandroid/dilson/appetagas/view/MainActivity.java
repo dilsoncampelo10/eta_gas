@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
         this.editEthanol = findViewById(R.id.editEthanol);
         this.editGasoline = findViewById(R.id.editGasoline);
         this.btnCalculate = findViewById(R.id.btnCalculate);
