@@ -2,15 +2,17 @@ package devandroid.dilson.appetagas.controller;
 
 import android.content.SharedPreferences;
 
+import devandroid.dilson.appetagas.database.EtaGasDB;
 import devandroid.dilson.appetagas.model.Fuel;
 import devandroid.dilson.appetagas.view.MainActivity;
 
-public class FuelController {
+public class FuelController extends EtaGasDB {
     private SharedPreferences sharedPreferences;
     private static final String PREFERENCE_NAME = "pref_fuel";
     private SharedPreferences.Editor fuelList;
 
     public FuelController(MainActivity mainActivity){
+        super(mainActivity);
         this.sharedPreferences = mainActivity.getSharedPreferences(PREFERENCE_NAME,0);
         this.fuelList = sharedPreferences.edit();
     }

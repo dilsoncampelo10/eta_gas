@@ -30,9 +30,9 @@ public class EtaGasDB extends SQLiteOpenHelper {
 
         String table
                 = "CREATE TABLE fuel (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "nomeDoCombustivel TEXT, " +
-                "precoDoCombustivel REAL, " +
-                "recomendacao TEXT)";
+                "name TEXT, " +
+                "price REAL, " +
+                "msg TEXT)";
 
        db.execSQL(table);
 
